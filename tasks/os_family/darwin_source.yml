@@ -1,0 +1,28 @@
+---
+# task file to build macports from source on Darwin
+
+- name: darwin | source | ensure /opt/local/src exists
+  file:
+    path=/opt/local/src
+    owner=root
+    group=staff
+    mode=0755
+    state=directory
+  sudo: yes
+
+- name: darwin | source | check if tarball exists
+  stat:
+    path="/opt/local/src/{{ ansiblebit_macports_tarball }}"
+  register: f
+
+- name: darwin | source | download macports tarball
+  get_url:
+    url={{ ansiblebit_macports_tarball_url }}
+    dest=/opt/local/src
+    sha256sum={{ ansiblebit_macports_tarball_sha256 }}
+    owner=root
+    group=wheel
+    mode=0644
+  sudo: yes
+  when: not f.stat.exists
+
