@@ -5,4 +5,4 @@
   connection: local
   gather_facts: no
   roles:
-    - primogen
+    - macports
