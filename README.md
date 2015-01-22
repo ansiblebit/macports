@@ -43,7 +43,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: ansiblebit.macports, macports_version: 2.3.3, macports_upgrade_outdated: yes }
+         - { role: ixebit.macports, macports_version: 2.3.3, macports_upgrade_outdated: yes }
 
 License
 -------
