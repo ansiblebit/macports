@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Pedro Salgado
-  description: Role for macports.
+  description: Role for macports on MacOSX.
   company: ansiblebit.org
   license: BSD
   min_ansible_version: 1.7.2
