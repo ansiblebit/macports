@@ -3,8 +3,8 @@ macports
 
 An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org).
 
-[![Build Status](https://travis-ci.org/ansiblebit/macports.svg?branch=master)](https://travis-ci.org/ansiblebit/macports)
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/macports/master/LICENSE)
+[![License](http://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/macports/master/LICENSE)
+[![Platforms](http://img.shields.io/badge/platforms-macosx-lightgrey.svg?style=flat)](#)
 
 [![Project Stats](https://www.openhub.net/p/ansiblebit-macports/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-macports/)
 
