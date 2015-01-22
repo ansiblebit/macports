@@ -3,14 +3,14 @@
 
 - name: darwin | macosx | check if package installer file exists
   stat:
-    path="/tmp/{{ macports_installer[ major_version ][ 'name' ] }}"
+    path="/tmp/{{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }}"
   register: f
 
 - name: darwin | macosx | download macports package installer
   get_url:
-    url="https://distfiles.macports.org/MacPorts/{{ macports_installer[ major_version ][ 'name' ] }}"
+    url="{{ macports_tarball_url }}/{{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }}"
     dest=/tmp
-    sha256sum={{ macports_installer[ major_version ][ 'sha256' ] }}
+    sha256sum={{ macports_installer[ 'macosx' ][ major_version ][ 'sha256' ] }}
     owner=root
     group=wheel
     mode=0644
@@ -18,7 +18,7 @@
   when: not f.stat.exists
 
 - name: darwin | macosx | install macports
-  command: "installer -verbose -pkg {{ macports_installer[ major_version ][ 'name' ] }} -target /"
+  command: "installer -verbose -pkg {{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }} -target /"
   args:
     chdir: /tmp/
   sudo: yes
@@ -29,7 +29,7 @@
 
 - name: darwin | macosx | remove macports package installer
   file:
-    path="/tmp/{{ macports_installer[ major_version ][ 'name' ] }}"
+    path="/tmp/{{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }}"
     state=absent
   sudo: yes
 

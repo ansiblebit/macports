@@ -16,9 +16,22 @@ Requirements
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+User defined variables:
 
-- macports_version (default=2.3.3)
+| variable | default value | description |
+|:--------:|:-------------:|:------------|
+| macports_version | 2.3.3 | the macports version to be installed. |
+| macports_upgrade_outdated | yes | flag to determine if outdated ports should be upgraded after the installation process. |
+
+
+Default variables:
+
+| variable | description |
+|:--------:|:------------|
+| macports_tarball | the file name of the macports tarball. |
+| macports_tarball_url | the prefix for the URL from which the macports tarball will be downloaded. |
+| macports_build_from_source | flag to determine if macports is to be installed from source (not supported yet). |
+| macports_installer | hash that contains the filename and SHA256 checksum of the macports files for each supported OS family and distribution. |
 
 Dependencies
 ------------
