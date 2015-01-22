@@ -3,14 +3,14 @@
 
 - name: darwin | macosx | check if package installer file exists
   stat:
-    path="/tmp/{{ ansiblebit_macports_installer[ major_version ][ 'name' ] }}"
+    path="/tmp/{{ macports_installer[ major_version ][ 'name' ] }}"
   register: f
 
 - name: darwin | macosx | download macports package installer
   get_url:
-    url="https://distfiles.macports.org/MacPorts/{{ ansiblebit_macports_installer[ major_version ][ 'name' ] }}"
+    url="https://distfiles.macports.org/MacPorts/{{ macports_installer[ major_version ][ 'name' ] }}"
     dest=/tmp
-    sha256sum={{ ansiblebit_macports_installer[ major_version ][ 'sha256' ] }}
+    sha256sum={{ macports_installer[ major_version ][ 'sha256' ] }}
     owner=root
     group=wheel
     mode=0644
@@ -18,15 +18,22 @@
   when: not f.stat.exists
 
 - name: darwin | macosx | install macports
-  shell: "installer -verbose -pkg /tmp/{{ ansiblebit_macports_installer[ major_version ][ 'name' ] }} -target /"
+  command: "installer -verbose -pkg {{ macports_installer[ major_version ][ 'name' ] }} -target /"
+  args:
+    chdir: /tmp/
   sudo: yes
 
 - name: darwin | macosx | update ports tree and rebuild installation if needed
-  shell: port -v selfupdate
+  command: port -v selfupdate
   sudo: yes
 
 - name: darwin | macosx | remove macports package installer
   file:
-    path="/tmp/{{ ansiblebit_macports_installer[ major_version ][ 'name' ] }}"
+    path="/tmp/{{ macports_installer[ major_version ][ 'name' ] }}"
     state=absent
   sudo: yes
+
+- name: darwin | macosx | upgrade outdated ports
+  command: port -v upgrade outdated
+  sudo: yes
+  when: macports_upgrade_outdated

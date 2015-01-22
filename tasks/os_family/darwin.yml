@@ -3,14 +3,14 @@
 
 - name: darwin is supported
   set_fact:
-    ansiblebit_os_supported: yes
+    os_supported: yes
 
 - name: include build from source task file
   include: darwin_source.yml
-  when: ansiblebit_macports_build_from_source or not ansible_distribution | lower == 'macosx'
+  when: macports_build_from_source or not ansible_distribution | lower == 'macosx'
 
 - name: include macosx distribution task file
   include: darwin_macosx.yml
   vars:
     major_version: "{{ ansible_distribution_version.split('.')[0:2] | join('.') }}"
-  when: not ansiblebit_macports_build_from_source and ansible_distribution | lower == 'macosx'
+  when: not macports_build_from_source and ansible_distribution | lower == 'macosx'

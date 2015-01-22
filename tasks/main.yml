@@ -10,7 +10,7 @@
 - name: check if operating system is suported
   fail:
     msg: "The operating system ({{ ansible_os_family }}) of the target machine ({{ inventory_hostname }}) is not currently supported."
-  when: ansiblebit_os_supported is not defined
+  when: os_supported is not defined
 
 
 ## generic tasks

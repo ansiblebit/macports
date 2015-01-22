@@ -1,19 +1,20 @@
 ---
 # defaults file
 
-ansiblebit_macports_version: 2.3.3
-ansiblebit_macports_tarball: "MacPorts-{{ ansiblebit_macports_version }}.tar.gz"
-ansiblebit_macports_tarball_url: "https://distfiles.macports.org/MacPorts/{{ ansiblebit_macports_tarball }}"
-ansiblebit_macports_tarball_sha256: 008521ed399cbb233a2a9d5abdd2f10eb3432545d94d582b5c9ddb3fbc966300
-ansiblebit_macports_build_from_source: no
+macports_version: 2.3.3
+macports_tarball: "MacPorts-{{ macports_version }}.tar.gz"
+macports_tarball_url: "https://distfiles.macports.org/MacPorts/{{ macports_tarball }}"
+macports_tarball_sha256: 008521ed399cbb233a2a9d5abdd2f10eb3432545d94d582b5c9ddb3fbc966300
+macports_build_from_source: no
+macports_upgrade_outdated: yes
 
-ansiblebit_macports_installer:
+macports_installer:
   '10.10':
-    name: "MacPorts-{{ ansiblebit_macports_version }}-10.10-Yosemite.pkg"
+    name: "MacPorts-{{ macports_version }}-10.10-Yosemite.pkg"
     sha256: 7eb27ccbdf5cb61840494d954e8b56a9ee96c250d6c6c6ac887f0d80836d2d17
   '10.9':
-    name: "MacPorts-{{ ansiblebit_macports_version }}-10.9-Mavericks.pkg"
+    name: "MacPorts-{{ macports_version }}-10.9-Mavericks.pkg"
     sha256: 30d35308cf3bf6b66e6ed489ae7d1012f6e465ec4b4349a5c26a959e9130b512
   '10.8':
-    name: "MacPorts-{{ ansiblebit_macports_version }}-10.8-MountainLion.pkg"
+    name: "MacPorts-{{ macports_version }}-10.8-MountainLion.pkg"
     sha256: ef5ae9c9fbe1a84eb0b1a7b5bf7d4b6b0d763bb5739f84fce8b43e9e5c68d5a1
