@@ -1,5 +1,5 @@
-macports
-========
+bit.macports
+============
 
 An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org).
 
