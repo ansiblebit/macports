@@ -18,7 +18,6 @@ Role Variables
 
 User defined variables:
 
-|:--------:|:-------------:|:------------|
 | variable | default value | description |
 |:--------:|:-------------:|:------------|
 | macports_version | 2.3.3 | the macports version to be installed. |
@@ -27,7 +26,6 @@ User defined variables:
 
 Default variables:
 
-|:--------:|:------------|
 | variable | description |
 |:--------:|:------------|
 | macports_build_from_source | flag to determine if macports is to be installed from source (not supported yet). |
