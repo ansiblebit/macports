@@ -6,6 +6,11 @@
     path="/tmp/{{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }}"
   register: f
 
+- name: darwin | macosx | check previous installation
+  stat:
+    path=/opt/local/bin/port
+  register: port
+
 - name: darwin | macosx | download macports package installer
   get_url:
     url="{{ macports_tarball_url }}/{{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }}"
@@ -15,13 +20,14 @@
     group=wheel
     mode=0644
   sudo: yes
-  when: not f.stat.exists
+  when: not port.stat.exists or macports_force_install
 
 - name: darwin | macosx | install macports
   command: "installer -verbose -pkg {{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }} -target /"
   args:
     chdir: /tmp/
   sudo: yes
+  when: not port.stat.exists or macports_force_install
 
 - name: darwin | macosx | update ports tree and rebuild installation if needed
   command: port -v selfupdate
