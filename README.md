@@ -1,22 +1,19 @@
-ansiblebit.macports
-===================
-
-An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org).
+# ansiblebit.macports
 
 [![License](http://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/macports/master/LICENSE)
 [![Platforms](http://img.shields.io/badge/platforms-macosx-lightgrey.svg?style=flat)](#)
 
 [![Project Stats](https://www.openhub.net/p/ansiblebit-macports/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-macports/)
 
-Requirements
-------------
+An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org).
+
+## Requirements
 
 - ansible >= 1.7.2
 
-Role Variables
---------------
+## Role Variables
 
-User defined variables:
+### User defined variables
 
 | variable | default value | description |
 |:--------:|:-------------:|:------------|
@@ -24,7 +21,7 @@ User defined variables:
 | macports_upgrade_outdated | yes | flag to determine if outdated ports should be upgraded after the installation process. |
 
 
-Default variables:
+### Default variables
 
 | variable | description |
 |:--------:|:------------|
@@ -34,24 +31,20 @@ Default variables:
 | macports_tarball | the file name of the macports tarball. |
 | macports_tarball_url | the prefix for the URL from which the macports tarball will be downloaded. |
 
-Dependencies
-------------
+## Dependencies
 
 None.
 
-Example Playbook
-----------------
+## Example Playbook
 
     - hosts: servers
       roles:
          - { role: ansiblebit.macports, macports_version: 2.3.3, macports_upgrade_outdated: yes }
 
-License
--------
+## License
 
 BSD
 
-Author Information
-------------------
+## Author Information
 
 - [steenzout](http://github.com/steenzout)
