@@ -43,3 +43,6 @@
   command: port -v upgrade outdated
   sudo: yes
   when: macports_upgrade_outdated
+  register: port_upgrade_outdated
+  failed_when: port_upgrade_outdated != 0 and not 'Nothing to upgrade.' in port_upgrade_outdated.stdout
+
