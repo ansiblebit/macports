@@ -41,6 +41,15 @@ None.
       roles:
          - { role: ansiblebit.macports, macports_version: 2.3.3, macports_upgrade_outdated: yes }
 
+## Changelog
+
+- v1.0.4 : 15 March 2015
+    - added OSX 10.10.2 as supported version
+- v1.0.2 :
+    - fixed [issue #1 : playbook fails when there are no ports to upgrade](https://github.com/ansiblebit/macports/issues/1)
+- v1.0.0 :
+    - initial release
+
 ## License
 
 BSD
