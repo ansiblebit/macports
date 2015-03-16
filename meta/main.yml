@@ -8,6 +8,7 @@ galaxy_info:
   platforms:
   - name: MacOSX
     versions:
+    - 10.10.2
     - 10.10.1
     - 10.9.5
     - 10.9.4
