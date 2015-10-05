@@ -17,7 +17,7 @@ An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org
 
 | variable | default value | description |
 |:--------:|:-------------:|:------------|
-| macports_version | 2.3.3 | the macports version to be installed. |
+| macports_version | 2.3.4 | the macports version to be installed. |
 | macports_upgrade_outdated | yes | flag to determine if outdated ports should be upgraded after the installation process. |
 | macports_selfupdate | yes | flag to determine if the latest port revisions should be downloaded. |
 
@@ -44,6 +44,9 @@ None.
 
 ## Changelog
 
+- v1.0.8 : 5 Oct 2015
+    - default `macports_version` changed to 2.3.4
+    - added support for OSX 10.11 El Capitan
 - v1.0.6 : 5 Oct 2015
     - added macports_selfupdate variable
     - changed status when upgrading outdated ports is now set correctly
