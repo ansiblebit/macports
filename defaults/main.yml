@@ -1,7 +1,7 @@
 ---
 # defaults file
 
-macports_version: 2.3.3
+macports_version: 2.3.4
 macports_tarball_url: "https://distfiles.macports.org/MacPorts/"
 macports_build_from_source: no
 macports_selfupdate: yes
@@ -10,6 +10,9 @@ macports_force_install: no
 
 macports_installer:
   macosx:
+    '10.11':
+      name: "MacPorts-{{ macports_version }}-10.11-ElCapitan.pkg"
+      sha256: 8c0b492032c796d766b76da3d1fda8dea732a6cc9056633a3509e3ff06b5e8d8
     '10.10':
       name: "MacPorts-{{ macports_version }}-10.10-Yosemite.pkg"
       sha256: 7eb27ccbdf5cb61840494d954e8b56a9ee96c250d6c6c6ac887f0d80836d2d17
