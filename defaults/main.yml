@@ -1,4 +1,6 @@
 ---
+# file: macports/defaults/main.yml
+#
 # defaults file
 
 macports_version: 2.3.4
@@ -28,3 +30,4 @@ macports_installer:
     '10.6':
       name: "MacPorts-{{ macports_version }}-10.8-SnowLeopard.pkg"
       sha256: ef5ae9c9fbe1a84eb0b1a7b5bf7d4b6b0d763bb5739f84fce8b43e9e5c68d5a1
+

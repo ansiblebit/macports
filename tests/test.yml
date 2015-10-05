@@ -1,8 +1,17 @@
 ---
-# file: tests/site.yml
+# file: macports/tests/test.yml
 
-- hosts: all
-  connection: local
+- name: tests play
+  hosts: all
   gather_facts: yes
+  connection: local
+
   roles:
-    - macports
+    - { role: macports,
+        macports_selfupdate: no,
+        macports_upgrade_outdated: yes }
+
+    - { role: tests,
+        expected_port_version: '2.3.4',
+        tags: test }
+

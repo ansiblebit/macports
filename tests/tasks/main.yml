@@ -1,0 +1,16 @@
+---
+# file: macports/tests/tasks
+#
+# Test tasks to verify role execution.
+#
+
+- name: register result_port_version
+  shell: port -v | head -n 1 | awk '{ print $2}'
+  register: result_port_version
+  changed_when: no
+
+- name: is port version on host correct?
+  fail:
+    msg="port version was {{ result_port_version.stdout }} instead of {{ expected_port_version }}"
+  when: result_port_version.stdout != expected_port_version
+

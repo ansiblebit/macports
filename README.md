@@ -7,9 +7,18 @@
 
 An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org).
 
+
+## Tests
+
+| Family | Distribution | Version | Test Status |
+|:-:|:-:|:-:|:-:|
+| Darwin | MacOSX  | 10.10  | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+
+
 ## Requirements
 
 - ansible >= 1.7.2
+
 
 ## Role Variables
 
@@ -32,15 +41,20 @@ An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org
 | macports_tarball | the file name of the macports tarball. |
 | macports_tarball_url | the prefix for the URL from which the macports tarball will be downloaded. |
 
+
 ## Dependencies
 
 None.
 
-## Example Playbook
+
+## Playbooks
 
     - hosts: servers
       roles:
-         - { role: ansiblebit.macports, macports_version: 2.3.3, macports_upgrade_outdated: yes }
+         - { role: ansiblebit.macports,
+             macports_version: 2.3.4,
+             macports_selfupdate: yes,
+             macports_upgrade_outdated: yes }
 
 ## Changelog
 
@@ -64,3 +78,4 @@ BSD
 ## Author Information
 
 - [steenzout](http://github.com/steenzout)
+
