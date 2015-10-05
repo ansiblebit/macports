@@ -58,6 +58,8 @@ None.
 
 ## Changelog
 
+- v1.9.8 : 5 Oct 2015
+    - merged with primogen v9
 - v1.0.8 : 5 Oct 2015
     - default `macports_version` changed to 2.3.4
     - added support for OSX 10.11 El Capitan
