@@ -4,6 +4,7 @@
 macports_version: 2.3.3
 macports_tarball_url: "https://distfiles.macports.org/MacPorts/"
 macports_build_from_source: no
+macports_selfupdate: yes
 macports_upgrade_outdated: yes
 macports_force_install: no
 
