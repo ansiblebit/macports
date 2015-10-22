@@ -58,6 +58,8 @@ None.
 
 ## Changelog
 
+- v1.9.10 : 21 Oct 2015
+    - changed download URL to sourceforge.net
 - v1.9.8 : 5 Oct 2015
     - merged with primogen v9
 - v1.0.8 : 5 Oct 2015
