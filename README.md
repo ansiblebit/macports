@@ -56,25 +56,6 @@ None.
              macports_selfupdate: yes,
              macports_upgrade_outdated: yes }
 
-## Changelog
-
-- v1.9.10 : 21 Oct 2015
-    - changed download URL to sourceforge.net
-- v1.9.8 : 5 Oct 2015
-    - merged with primogen v9
-- v1.0.8 : 5 Oct 2015
-    - default `macports_version` changed to 2.3.4
-    - added support for OSX 10.11 El Capitan
-- v1.0.6 : 5 Oct 2015
-    - added macports_selfupdate variable
-    - changed status when upgrading outdated ports is now set correctly
-- v1.0.4 : 15 March 2015
-    - added OSX 10.10.2 as supported version
-- v1.0.2 :
-    - fixed [issue #1 : playbook fails when there are no ports to upgrade](https://github.com/ansiblebit/macports/issues/1)
-- v1.0.0 :
-    - initial release
-
 ## License
 
 BSD
