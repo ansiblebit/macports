@@ -12,6 +12,9 @@ macports_force_install: no
 
 macports_installer:
   macosx:
+    '10.12':
+      name: "MacPorts-{{ macports_version }}-10.12-Sierra.pkg"
+      sha256: fc6c718dd7659d48d3d0764e9ded90b54439b0ed322804d7e58fec8914242479
     '10.11':
       name: "MacPorts-{{ macports_version }}-10.11-ElCapitan.pkg"
       sha256: 8c0b492032c796d766b76da3d1fda8dea732a6cc9056633a3509e3ff06b5e8d8
