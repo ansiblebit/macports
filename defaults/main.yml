@@ -3,7 +3,7 @@
 #
 # defaults file
 
-macports_version: 2.3.4
+macports_version: 2.4.1
 macports_tarball_url: "http://downloads.sourceforge.net/project/macports/MacPorts/{{ macports_version }}/"
 macports_build_from_source: no
 macports_selfupdate: yes
