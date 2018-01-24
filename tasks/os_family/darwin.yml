@@ -6,11 +6,11 @@
     os_supported: yes
 
 - name: include build from source task file
-  include: darwin_source.yml
+  import_tasks: darwin_source.yml
   when: macports_build_from_source or not ansible_distribution | lower == 'macosx'
 
 - name: include macosx distribution task file
-  include: darwin_macosx.yml
+  import_tasks: darwin_macosx.yml
   vars:
     major_version: "{{ ansible_distribution_version.split('.')[0:2] | join('.') }}"
   when: not macports_build_from_source and ansible_distribution | lower == 'macosx'

@@ -7,7 +7,7 @@
 ## include OS family specific task file
 
 - name: if darwin, include family specific task file
-  include: os_family/darwin.yml
+  import_tasks: os_family/darwin.yml
   when: ansible_os_family | lower == 'darwin'
 
 - name: check if operating system is suported
