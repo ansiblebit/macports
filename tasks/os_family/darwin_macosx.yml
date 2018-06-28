@@ -15,30 +15,29 @@
   get_url:
     url="{{ macports_tarball_url }}/{{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }}"
     dest=/tmp
-    sha256sum={{ macports_installer[ 'macosx' ][ major_version ][ 'sha256' ] }}
     owner=root
     group=wheel
     mode=0644
-  sudo: yes
+  become: yes
   when: not port.stat.exists or macports_force_install
 
 - name: darwin | macosx | install macports
   command: "installer -verbose -pkg {{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }} -target /"
   args:
     chdir: /tmp/
-  sudo: yes
+  become: yes
   when: not port.stat.exists or macports_force_install
 
 - name: darwin | macosx | update ports tree and rebuild installation if needed
   command: port -v selfupdate
   when: macports_selfupdate
-  sudo: yes
+  become: yes
 
 - name: darwin | macosx | remove macports package installer
   file:
     path="/tmp/{{ macports_installer[ 'macosx' ][ major_version ][ 'name' ] }}"
     state=absent
-  sudo: yes
+  become: yes
 
 - name: darwin | macosx | upgrade outdated ports
   command: port -v upgrade outdated
@@ -46,5 +45,5 @@
   changed_when: port_upgrade_outdated.rc != 0 and not 'Nothing to upgrade.' in port_upgrade_outdated.stdout
   failed_when: port_upgrade_outdated.rc != 0 and 'Error' in port_upgrade_outdated.stdout
   when: macports_upgrade_outdated
-  sudo: yes 
+  become: yes 
 
