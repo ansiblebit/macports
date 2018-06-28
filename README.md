@@ -12,34 +12,30 @@ An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org
 
 | Family | Distribution | Version | Test Status |
 |:-:|:-:|:-:|:-:|
-| Darwin | MacOSX  | 10.10  | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Darwin | MacOSX  | 10.13  | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 
 
 ## Requirements
 
-- ansible >= 1.7.2
+- ansible >= 2.4
 
 
 ## Role Variables
 
 ### User defined variables
 
-| variable | default value | description |
-|:--------:|:-------------:|:------------|
-| macports_version | 2.3.4 | the macports version to be installed. |
-| macports_upgrade_outdated | yes | flag to determine if outdated ports should be upgraded after the installation process. |
-| macports_selfupdate | yes | flag to determine if the latest port revisions should be downloaded. |
+- **macports_version**: the macports version to be installed (default: `2.5.2`).
+- **macports_upgrade_outdated**: flag to determine if outdated ports should be upgraded after the installation process (default: `yes`).
+- **macports_selfupdate**: flag to determine if the latest port revisions should be downloaded (default: `yes`).
 
 
 ### Default variables
 
-| variable | description |
-|:--------:|:------------|
-| macports_build_from_source | flag to determine if macports is to be installed from source (not supported yet). |
-| macports_force_install | flag to indicate if a new install is to be performed even if macports is already present in the server. |
-| macports_installer | hash that contains the filename and SHA256 checksum of the macports files for each supported OS family and distribution. |
-| macports_tarball | the file name of the macports tarball. |
-| macports_tarball_url | the prefix for the URL from which the macports tarball will be downloaded. |
+- **macports_build_from_source**: flag to determine if macports is to be installed from source (not supported yet).
+- **macports_force_install**: flag to indicate if a new install is to be performed even if macports is already present in the server.
+- **macports_installer**: hash that contains the filename and SHA256 checksum of the macports files for each supported OS family and distribution.
+- **macports_tarball**: the file name of the macports tarball.
+- **macports_tarball_url**: the prefix for the URL from which the macports tarball will be downloaded.
 
 
 ## Dependencies
@@ -55,12 +51,3 @@ None.
              macports_version: 2.3.4,
              macports_selfupdate: yes,
              macports_upgrade_outdated: yes }
-
-## License
-
-BSD
-
-## Author Information
-
-- [steenzout](http://github.com/steenzout)
-
