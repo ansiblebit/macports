@@ -22,14 +22,9 @@ An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org
 
 ## Role Variables
 
-### User defined variables
-
 - **macports_version**: the macports version to be installed (default: `2.5.2`).
 - **macports_upgrade_outdated**: flag to determine if outdated ports should be upgraded after the installation process (default: `yes`).
 - **macports_selfupdate**: flag to determine if the latest port revisions should be downloaded (default: `yes`).
-
-
-### Default variables
 
 - **macports_build_from_source**: flag to determine if macports is to be installed from source (not supported yet).
 - **macports_force_install**: flag to indicate if a new install is to be performed even if macports is already present in the server.
@@ -42,12 +37,8 @@ An [Ansible](http://www.ansible.com) role for [macports](http://www.macports.org
 
 None.
 
-
 ## Playbooks
 
     - hosts: servers
       roles:
-         - { role: ansiblebit.macports,
-             macports_version: 2.3.4,
-             macports_selfupdate: yes,
-             macports_upgrade_outdated: yes }
+         - role: ansiblebit.macports
