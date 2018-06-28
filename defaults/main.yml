@@ -3,7 +3,7 @@
 #
 # defaults file
 
-macports_version: 2.4.1
+macports_version: 2.5.2
 macports_tarball_url: "http://downloads.sourceforge.net/project/macports/MacPorts/{{ macports_version }}/"
 macports_build_from_source: no
 macports_selfupdate: yes
@@ -12,25 +12,19 @@ macports_force_install: no
 
 macports_installer:
   macosx:
+    '10.13':
+      name: "MacPorts-{{ macports_version }}-10.13-HighSierra.pkg"
     '10.12':
       name: "MacPorts-{{ macports_version }}-10.12-Sierra.pkg"
-      sha256: fc6c718dd7659d48d3d0764e9ded90b54439b0ed322804d7e58fec8914242479
     '10.11':
       name: "MacPorts-{{ macports_version }}-10.11-ElCapitan.pkg"
-      sha256: 8c0b492032c796d766b76da3d1fda8dea732a6cc9056633a3509e3ff06b5e8d8
     '10.10':
       name: "MacPorts-{{ macports_version }}-10.10-Yosemite.pkg"
-      sha256: 7eb27ccbdf5cb61840494d954e8b56a9ee96c250d6c6c6ac887f0d80836d2d17
     '10.9':
       name: "MacPorts-{{ macports_version }}-10.9-Mavericks.pkg"
-      sha256: 30d35308cf3bf6b66e6ed489ae7d1012f6e465ec4b4349a5c26a959e9130b512
     '10.8':
       name: "MacPorts-{{ macports_version }}-10.8-MountainLion.pkg"
-      sha256: ef5ae9c9fbe1a84eb0b1a7b5bf7d4b6b0d763bb5739f84fce8b43e9e5c68d5a1
     '10.7':
-      name: "MacPorts-{{ macports_version }}-10.8-Lion.pkg"
-      sha256: ef5ae9c9fbe1a84eb0b1a7b5bf7d4b6b0d763bb5739f84fce8b43e9e5c68d5a1
+      name: "MacPorts-{{ macports_version }}-10.7-Lion.pkg"
     '10.6':
-      name: "MacPorts-{{ macports_version }}-10.8-SnowLeopard.pkg"
-      sha256: ef5ae9c9fbe1a84eb0b1a7b5bf7d4b6b0d763bb5739f84fce8b43e9e5c68d5a1
-
+      name: "MacPorts-{{ macports_version }}-10.6-SnowLeopard.pkg"
