@@ -3,8 +3,8 @@
 #
 # defaults file
 
-macports_version: 2.5.2
-macports_tarball_url: "http://downloads.sourceforge.net/project/macports/MacPorts/{{ macports_version }}/"
+macports_version: 2.5.4
+macports_tarball_url: "https://distfiles.macports.org/MacPorts/"
 macports_build_from_source: no
 macports_selfupdate: yes
 macports_upgrade_outdated: yes
@@ -12,6 +12,8 @@ macports_force_install: no
 
 macports_installer:
   macosx:
+    '10.14':
+      name: "MacPorts-{{ macports_version }}-10.14-Mojave.pkg"
     '10.13':
       name: "MacPorts-{{ macports_version }}-10.13-HighSierra.pkg"
     '10.12':
