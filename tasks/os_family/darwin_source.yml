@@ -23,6 +23,6 @@
     owner=root
     group=wheel
     mode=0644
-  sudo: yes
+  become: yes
   when: not f.stat.exists
 
