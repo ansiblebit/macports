@@ -3,7 +3,7 @@
 #
 # defaults file
 
-macports_version: 2.5.4
+macports_version: 2.7.1
 macports_tarball_url: "https://distfiles.macports.org/MacPorts/"
 macports_build_from_source: no
 macports_selfupdate: yes
@@ -12,6 +12,10 @@ macports_force_install: no
 
 macports_installer:
   macosx:
+    '11.6':
+      name: "MacPorts-{{ macports_version }}-11-BigSur.pkg"
+    '10.15':
+      name: "MacPorts-{{ macports_version }}-10.15-Catalina.pkg"
     '10.14':
       name: "MacPorts-{{ macports_version }}-10.14-Mojave.pkg"
     '10.13':
